@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Temperature from "../src/components/Temperature";
+import CustomizeImage from "../src/components/CustomizeImage";
+import { BrowserRouter as Route } from "react-router-dom";
+import Home from "../src/views//Home";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Route path="/" component={Home} />
+        <Route path="/temperature" component={Temperature} />
+        <Route path="/customize-image" component={CustomizeImage} />
+      </div>
+    );
+  }
 }
 
 export default App;
