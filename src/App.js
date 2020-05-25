@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Temperature from "../src/components/Temperature";
-import CustomizeImage from "../src/components/CustomizeImage";
+import Temperature from "./views/Temperature";
+import CustomizeImage from "./views/CustomizeImage";
 import NavBar from "../src/components/NavBar";
 import { Route } from "react-router-dom";
 import Home from "../src/views/Home";
