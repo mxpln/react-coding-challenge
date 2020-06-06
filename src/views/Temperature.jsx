@@ -4,23 +4,22 @@ class Temperature extends Component {
   state = {
     temperature: null,
   };
-  handleValue = (event) => {
+  handleChange = (event) => {
     this.setState({
       temperature: event.target.value,
     });
   };
   render() {
     let temperature = this.state.temperature;
-    let info;
-    let color;
+    let result, color;
     if (temperature <= 10) {
-      info = "It's cold ❄️";
+      result = "It's cold ❄️";
       color = "blue";
     } else if (temperature > 10 && temperature <= 30) {
-      info = "It's nice 🌼";
+      result = "It's nice 🌼";
       color = "black";
     } else if (temperature > 10) {
-      info = "It's warm ☀️";
+      result = "It's warm ☀️";
       color = "red";
     }
     return (
@@ -29,11 +28,13 @@ class Temperature extends Component {
         <input
           type="number"
           name="temperature"
+          min="-50"
+          max="50"
           value={this.state.temperature}
-          onChange={this.handleValue}
+          onChange={this.handleChange}
         ></input>
 
-        {this.state.temperature && <p style={{ color: color }}> {info} </p>}
+        {this.state.temperature && <p style={{ color: color }}> {result} </p>}
       </div>
     );
   }
